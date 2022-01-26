@@ -5,10 +5,10 @@ import logging
 from flask import Flask, request
 
 logging.basicConfig(level=logging.INFO)
-app = Flask(__name__)
-# Uncomment when model file is available
-# model = pickle.load(open('model.pkl', 'rb'))
 
+model = pickle.load(open('model.pkl', 'rb'))
+
+app = Flask(__name__)
 
 @app.route('/')
 def hello():
@@ -20,9 +20,10 @@ def hello():
 # Refactor when model file is available
 @app.route('/predict', methods=['POST'])
 def predict():
-    json = request.json
-    logging.info(f"Received json: {json}")
-    # int_features = [float(x) for x in request.form.values()]
-    # final_features = [np.array(int_features)]
-    # prediction = model.predict(final_features)
-    return json
+    features = list(request.json.values())
+    logging.info(f"Received json: {features}")
+
+    final_features = [np.array(features)]
+    prediction = model.predict(final_features)
+
+    return { "quality": prediction[0] }

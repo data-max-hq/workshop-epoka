@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "d30ef796-0ef3-45ae-ab0d-756f61ec8cfb",
+		"_postman_id": "c4b11200-9b9e-4489-8a54-0aac443a9dcb",
 		"name": "Epoka Workshop",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -28,7 +28,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"input\": \"value\"\n}",
+					"raw": "{\n    \"alcohol\": 18.0,\n    \"chlorides\": 0.076,\n    \"citric acid\": 0.0,\n    \"density\": 0.9978,\n    \"fixed acidity\": 7.4,\n    \"free sulfur dioxide\": 11.0,\n    \"pH\": 3.51,\n    \"residual sugar\": 1.9,\n    \"sulphates\": 0.56,\n    \"total sulfur dioxide\": 34.0,\n    \"volatile acidity\": 0.7\n }\n",
 					"options": {
 						"raw": {
 							"language": "json"
