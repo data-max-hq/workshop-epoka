@@ -10,6 +10,7 @@ model = pickle.load(open('model.pkl', 'rb'))
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def hello():
     logging.info(f"Received request.")
@@ -26,4 +27,6 @@ def predict():
     final_features = [np.array(features)]
     prediction = model.predict(final_features)
 
-    return { "quality": prediction[0] }
+    logging.info(f"prediction: {prediction}")
+
+    return {"quality": prediction[0]}
